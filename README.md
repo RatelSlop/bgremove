@@ -42,6 +42,57 @@ Voor scholen en onderwijsinstellingen is privacy van cruciaal belang. In tegenst
 
 ---
 
+## 💻 Lokale Ontwikkeling
+
+```bash
+# Ga naar de map
+cd C:\Projects\bgremove
+
+# Afhankelijkheden installeren
+npm install
+
+# Start de lokale ontwikkelserver
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in je browser.
+
+---
+
+## 🚀 Publiceren naar GitHub Pages
+
+### Stap 1: GitHub Pages inschakelen in je repository
+
+1. Ga op GitHub naar je repository: [https://github.com/RatelSlop/bgremove](https://github.com/RatelSlop/bgremove).
+2. Klik op **Settings** (tabblad bovenaan) > **Pages** (in het linkermenu).
+3. Onder **Build and deployment** > **Source**:
+   - Wijzig dit van *Deploy from a branch* naar **GitHub Actions**.
+4. Zodra je nu naar `main` pusht, bouwt de workflow in `.github/workflows/deploy.yml` het project automatisch en zet het live op GitHub Pages!
+
+---
+
+### Stap 2: Eigen domein koppelen (`bgremove.schoolnaam.nl`)
+
+Het bestand `public/CNAME` staat al in het project met de inhoud `bgremove.schoolnaam.nl`.
+1. Ga in je DNS-beheer (bijv. Cloudflare DNS of je domeinregistrar van `schoolnaam.nl`).
+2. Voeg een **CNAME-record** toe:
+   - **Name**: `bgremove`
+   - **Target / Content**: `RatelSlop.github.io`
+   - **Proxy status**: DNS only (of Proxied indien via Cloudflare).
+3. Ga op GitHub naar **Settings** > **Pages** > **Custom domain** en vink eventueel **Enforce HTTPS** aan zodra het certificaat is gegenereerd.
+
+---
+
+## ⚡ Prestaties & WebAssembly (Cross-Origin Isolation)
+
+Omdat GitHub Pages geen aangepaste HTTP-headers ondersteunt, maakt deze applicatie gebruik van `coi-serviceworker.js`. Dit service worker script injecteert lokaal in de browser de benodigde beveiligingsheaders:
+
+```http
+Cross-Origin-Opener-Policy: same-origin
+Cross-Origin-Embedder-Policy: require-corp
+```
+
+Hierdoor blijft **Multi-threaded WebAssembly & WebGPU** volledig werken op GitHub Pages voor maximale rekensnelheid!
 
 ---
 

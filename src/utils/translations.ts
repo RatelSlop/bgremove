@@ -43,7 +43,7 @@ export const translations: Record<Language, TranslationDictionary> = {
     undo: 'Ongedaan maken',
     gdprGuarantee: 'Privacygarantie voor scholen & onderwijs',
     gdprDetail: 'In tegenstelling tot andere websites worden jouw foto\'s NIET geüpload naar externe servers of clouddiensten. Alle berekeningen gebeuren lokaal op jouw apparaat via WebAssembly. Veilig voor portretfoto\'s van leerlingen, docenten en schoolmateriaal.',
-    poweredBy: 'Aangedreven door moderne Browser AI & Cloudflare Pages',
+    poweredBy: 'Aangedreven door moderne Browser AI & GitHub Pages',
   },
   en: {
     title: 'Background Remover',
@@ -87,6 +87,6 @@ export const translations: Record<Language, TranslationDictionary> = {
     undo: 'Undo',
     gdprGuarantee: 'Privacy Guarantee for Schools & Education',
     gdprDetail: 'Unlike other online tools, your photos are NOT uploaded to external servers or cloud APIs. All AI inference runs locally in your web browser via WebAssembly. Safe for student portraits, staff photos, and school assets.',
-    poweredBy: 'Powered by modern Browser AI & Cloudflare Pages',
+    poweredBy: 'Powered by modern Browser AI & GitHub Pages',
   },
 };

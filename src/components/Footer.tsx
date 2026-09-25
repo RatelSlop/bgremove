@@ -19,7 +19,7 @@ export const Footer: React.FC<FooterProps> = ({ t }) => {
           <span>•</span>
           <span className="flex items-center gap-1">
             <Cloud className="w-3.5 h-3.5 text-amber-500" />
-            <span>Gehost op Cloudflare Pages</span>
+            <span>Gehost op GitHub Pages</span>
           </span>
         </div>
 
